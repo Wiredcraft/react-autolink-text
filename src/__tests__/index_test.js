@@ -1,7 +1,9 @@
-import React from 'react/addons';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server'
+import ReactTestUtils from 'react-addons-test-utils';
 import AutoLinkText from '../index';
 
-const {renderIntoDocument, createRenderer} = React.addons.TestUtils;
+const {renderIntoDocument, createRenderer} = ReactTestUtils;
 
 describe('<AutoLinkText />', function() {
   let renderer;
@@ -11,7 +13,7 @@ describe('<AutoLinkText />', function() {
   });
 
   function renderText(text, props={}) {
-    return React.renderToStaticMarkup(
+    return ReactDOMServer.renderToStaticMarkup(
       <AutoLinkText text={text} {...props} />
     );
   }
