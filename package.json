@@ -12,7 +12,7 @@
   "scripts": {
     "examples": "webpack-dev-server --config examples/webpack.config.js --content-base examples --inline",
     "prepublish": "babel src --out-dir lib",
-    "preinstall": "npm run prepublish",
+    "postinstall": "npm run prepublish",
     "test": "karma start"
   },
   "devDependencies": {
